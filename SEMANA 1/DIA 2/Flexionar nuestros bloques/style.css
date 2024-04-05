@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 950px;
+    background-color: silver;
+    margin: 0 auto;
+}
+
+.top-nav {
+    background-color: green;
+    height: 150px;
+    margin: 17px;
+    margin-bottom: 0; 
+}
+
+.row {
+    display: flex;
+}
+
+.side-nav {
+    background-color: blue;
+    width: 200px;
+    height: 300px;
+    margin: 15px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    flex-grow: 1;
+    margin: 15px 17px 17px;
+}
+
+.sub-content {
+    background-color: yellow;
+    height: 190px;
+    width: 180px;
+    margin: 15px 05px 0 15px
+}
+
+.sub-content-row {
+    display: flex;
+    justify-content: flex-end; 
+    margin-right: 0; 
+}
+
+#advertisement {
+    background-color: purple;
+    height: 100px;
+    width: 582px;
+    margin: 15px 05px 50px 15px; 
+}
