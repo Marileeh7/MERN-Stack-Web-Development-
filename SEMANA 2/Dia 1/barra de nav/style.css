@@ -1,0 +1,40 @@
+*{
+    font-family: "Roboto", sans-serif;
+}
+body{
+    margin: 0;
+}
+.nav{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-title{
+    color: white;
+    margin-left: 25px;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    font-size: large;
+}
+.btn{
+    height: 30px;
+    background-color: cadetblue;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    font-size: large;
+    color: white;
+}
+li{
+    margin: 0px 10px;
+}
+a{
+    color: rgb(171, 171, 171);
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+  }
