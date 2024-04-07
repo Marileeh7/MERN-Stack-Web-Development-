@@ -1,0 +1,70 @@
+* {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: cursive;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	}
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .card{
+        width: 40%;
+        margin-top: 50px;
+        background-color: rgb(255, 255, 255);
+    }
+    .azul{
+        height: 100px;
+        background-color: rgb(23,162,184);
+    }
+    .perfil img{
+        position: absolute;
+        top: 100px;
+        width: 100px;
+        height: 100px;
+        padding: 2px;
+        margin-left: 30px;
+        background-color: white;
+        border: solid;
+        border-color: rgb(204,204,204);
+        border-radius: 100%;
+    }
+    .contenido{
+        /* margin-top: 60px; */
+        margin-bottom: 30px;
+        /* margin-left: 30px; */
+        padding: 37px;
+        padding-top: 60px;
+        /* border: solid; */
+        border-left: solid;
+        border-right: solid;
+        border-bottom: solid;
+        border-color: rgb(204,204,204);
+    }
+    .contenido h2, h3{
+        display: flex;
+        align-items: center;
+        padding: 7px 0px;
+    }
+    .img{
+        width: 15px;
+        height: 19px;
+        margin-right: 5px;
+    }
+    h1{
+        font-size:x-large;
+        font-style: bold;
+
+    }
+    h3{
+        text-decoration: underline;
+    }
+    #gear{
+        height: 15px;
+    }
