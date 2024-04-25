@@ -1,0 +1,33 @@
+body {
+    background-color: DarkGrey;
+    box-sizing: border-box;
+    width: 280px;
+    margin:0 auto;
+    cursor: none;
+}
+.row{
+    display: flex;
+}
+div.row div {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+div.brick {
+    background-color: blue;
+}
+.coin-img {
+    display: block;
+    width: 10px;
+    margin: 0 auto;
+    background-color: DarkGrey;
+}
+.empty{
+    background-color: DarkGrey;
+}
+.ninja-img {
+    display: block;
+    width: 13.72px;
+    margin: 0 auto;
+    background-color: DarkGrey;
+}
