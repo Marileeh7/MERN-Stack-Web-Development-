@@ -1,0 +1,23 @@
+#ocean {
+    background-image: url("/assets/City.jpg");
+    width: 900px;
+    height: 700px;
+}
+.player {
+    position: absolute;
+    background-image: url("/assets/superplane80x67.png");
+    width: 80px;
+    height: 67px;
+}
+.enemy {
+    position: absolute;
+    background-image: url("/assets/Medium_boss80X65.png");
+    width: 80px;
+    height: 65px;
+}
+.missile {
+    position: absolute;
+    background-color: yellow;
+    width: 2px;
+    height: 10px;
+}
