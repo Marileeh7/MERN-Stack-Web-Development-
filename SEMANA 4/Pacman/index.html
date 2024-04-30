@@ -1,0 +1,267 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NinjaMan</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: x-large;
+        }
+        .paredes{
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            background-color: RGB(17, 47, 223);
+        }
+        .coin{
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            background-image: url("./img/coin.gif");
+            background-size: contain;
+            background-color: black;
+        }
+        #ghost{
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            background-image: url("./img/red.gif");
+            background-size: contain;
+            left: 240px;
+            top: 0px;
+        }
+        .cherry{
+            height: 40px;
+            width:  40px;
+            display: inline-block;
+            background-image: url("./img/cherry.png");
+            background-size: cover;
+            background-color: black;
+        }
+        .camino{
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            background-color: black;
+        }
+        #ninja{
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            background-image: url("./img/pac-man.gif");
+            background-size: contain;
+            left: 240px;
+            top: 0px;
+            
+        }
+        #gameOver {
+            position: absolute;
+            width: 440;
+            text-align: center;
+            background-color: white;
+            display: inline-block;
+            left: 0px;
+            top: 160px;
+            display: none;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="world">
+    </div>
+    <div id="ninja"></div>
+    <div id="gameOver"><h1>PERDISTE</h1></div>
+    <div id="ghost"></div>
+    <p id="score">Puntaje: 0</p>
+    <p id="life">Vida: 3</p>
+    
+</body>
+<script>
+
+    var diccionario = {
+        0:"camino",
+        1:"paredes",
+        2:"coin",
+        3:"cherry"
+    };
+
+    var ninja = {
+        x:1,
+        y:1,
+        vidas:3
+    }
+
+    var fantasma = {
+        x:1,
+        y:1
+    }
+
+    var puntos=0;
+    var worldRandom=[
+        [1,1,1,1,1,1,1,1,1,1,1],
+        [1,0,2,2,2,2,2,2,2,2,1],
+        [1,1,1,1,2,1,1,2,1,1,1],
+        [1,2,2,1,2,2,2,2,2,2,1],
+        [1,2,1,1,1,1,1,2,1,2,1],
+        [1,2,2,1,2,2,1,2,2,2,1],
+        [1,1,2,1,3,2,1,2,1,2,1],
+        [1,2,2,2,2,1,1,2,2,2,1],
+        [1,2,1,2,2,2,2,2,1,0,1],
+        [1,1,1,1,1,1,1,1,1,1,1]
+    ];
+    
+    function puntaje() {
+        if(worldRandom[ninja.y][ninja.x]==2){
+            puntos=puntos+10;
+        }else if(worldRandom[ninja.y][ninja.x]==3){
+            puntos=puntos+20;
+        }
+        document.getElementById("score").innerHTML="Puntaje: "+puntos;
+    }
+
+    function estaVivo () {
+        if (ninja.x==fantasma.x && ninja.y==fantasma.y) {
+            if (ninja.vidas>1) {
+                ninja.vidas--
+                document.getElementById("life").innerHTML="Vidas: "+ninja.vidas;
+                //mundoRandom();
+                dibujarMundo();
+                
+                posicionInicialNinja();
+                posicionInicialFantasma();
+    
+                dibujarFantasma();
+                dibujarNinja();    
+            } else {
+                ninja.vidas--
+                document.getElementById("life").innerHTML="Vidas: "+ninja.vidas;
+                document.getElementById("gameOver").style.display='block';
+            }
+        }
+    }
+
+    // function mundoRandom () {
+    //     var ghost = 2;
+    //     worldRandom=[];
+    //     for(var fila = 0; fila<10; fila++){
+    //         aux=[];
+                
+    //         for(var columna = 0; columna<10; columna++){
+    //             if(fila==0 || fila==9 || columna==0 || columna==9){
+    //                 aux.push(1);
+    //             }else{
+    //                 aux.push(Math.floor(Math.random() * 3));
+    //             }
+    //         }
+    //         worldRandom.push(aux);
+    //         aux=[];
+    //     }
+    // }
+    
+    function dibujarMundo () {
+        salida="";
+
+        for(var row = 0; row<worldRandom.length; row++){
+            salida+='<div class="row">';
+            for(var x = 0; x<worldRandom[row].length; x++){
+                salida+='<div class="'+diccionario[worldRandom[row][x]]+'"></div>';
+            }
+            salida+="</div>";
+        }
+
+        document.getElementById("world").innerHTML=salida;
+    }
+
+    function dibujarNinja () {
+        document.getElementById("ninja").style.top=ninja.y*40+"px";
+        document.getElementById("ninja").style.left=ninja.x*40+"px";
+    }
+    function dibujarFantasma () {
+        document.getElementById("ghost").style.top=fantasma.y*40+"px";
+        document.getElementById("ghost").style.left=fantasma.x*40+"px";
+    }
+    
+    function moverFantasma() {
+        if (ninja.x<fantasma.x && worldRandom[fantasma.y][fantasma.x-1] != 1){//arriba
+            fantasma.x--;
+        }else if(ninja.x>fantasma.x && worldRandom[fantasma.y][fantasma.x+1] != 1){//ABAJO
+            fantasma.x++;
+        }else if(ninja.y<fantasma.y && worldRandom[fantasma.y-1][fantasma.x] != 1){//IZQUIERDA
+            fantasma.y--;
+        }else if (ninja.y>fantasma.y && worldRandom[fantasma.y+1][fantasma.x] != 1){ // derecha
+            fantasma.y++;
+        }
+    }
+
+    
+    function posicionInicialNinja() {
+        let fin=false;
+        for (let row = 0; row < worldRandom.length; row++) {
+            for (let colum = 0; colum < worldRandom[row].length; colum++) {
+                if (worldRandom[row][colum]==0) {
+                        ninja.x=colum;
+                        ninja.y=row;
+                        fin=true;
+                    return;
+                }
+            }
+        }
+    }
+    
+    function posicionInicialFantasma() {
+        let fin=false;
+        for (let row = 0; row < worldRandom.length; row++) {
+            for (let colum = 0; colum < worldRandom[row].length; colum++) {
+                if (worldRandom[row][colum]==0) {
+                        fantasma.x=colum;
+                        fantasma.y=row;
+                        fin=true;
+                    break;
+                }
+            }
+        }
+    }    
+    
+    document.onkeydown = function(e){
+        if(e.keyCode==37 && worldRandom[ninja.y][ninja.x-1] != 1){//ARRIBA
+            ninja.x--;
+            
+        }else if(e.keyCode==39 && worldRandom[ninja.y][ninja.x+1] != 1){//ABAJO
+            ninja.x++;
+            
+        }else if(e.keyCode==38 && worldRandom[ninja.y-1][ninja.x] != 1){//IZQUIERDA
+            ninja.y--;
+            
+        }else if(e.keyCode==40 && worldRandom[ninja.y+1][ninja.x] != 1){//DERECHA
+            ninja.y++;
+        }
+        if (ninja.vidas>0) {
+            puntaje();
+            moverFantasma();
+            estaVivo()
+            dibujarFantasma();
+            worldRandom[ninja.y][ninja.x]=0;
+            dibujarNinja();
+            dibujarMundo();
+            
+        }
+    }
+
+    //mundoRandom();
+
+    dibujarMundo();
+    
+    posicionInicialNinja();
+    posicionInicialFantasma();
+
+    dibujarFantasma();
+    dibujarNinja();
+    
+</script>
+</html>
