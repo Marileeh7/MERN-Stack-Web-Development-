@@ -6,3 +6,5 @@ function reproducir(element) {
 function pausa(element) {
     element.pause();
 }
+
+
