@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+#container{
+    background: url(./img/fondo.jpeg);
+    width: 1000px;
+    height: 550px;
+}
+#hero{
+    background: url(./img/1942.gif);
+    background-position: -85px -180px;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+}
+.enemy1{
+    background: url(./img/1942.gif);
+    background-position: -30px -10px;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+}
+.enemy2{
+    background: url(./img/enemy.png);
+    width: 28px;
+    height: 28px;
+    background-size: 100%;
+    position:absolute;
+}
+.bullet{
+    background: url(./img/1942.gif);
+    background-position: -185px -400px;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+}
+#score{
+    position: absolute;
+    border: 10px solid red;
+    top: 475px;
+    background-color: white;
+    padding: 10px;
+    font-size: 30px;
+}
+#explosion{
+    position: absolute;
+    background-image: url(./img/1942.gif);
+    background-position: -110px -30px;
+    width: 28px;
+    height: 28px;
+    display: none;
+}
