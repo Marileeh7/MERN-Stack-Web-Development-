@@ -1,0 +1,22 @@
+.main{
+    box-sizing: border-box;
+    grid-area: Main;
+    width: 100%;
+    height: 100%;
+    background-color: #e06666;
+}
+
+.container{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
+
+.downContainer{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}

@@ -1,0 +1,17 @@
+.App{
+  box-sizing: border-box;
+  display: grid; 
+  grid-template-columns: 0.7fr 1.3fr 1fr; 
+  grid-template-rows: 0.5fr 1.5fr 1fr; 
+  gap: 20px 20px;
+  grid-template-areas: 
+    "Header Header Header"
+    "Navigation Main Main"
+    "Navigation Main Main"; 
+  padding: 20px;
+  margin-top: 10px;
+  margin-inline: auto;
+  width: 98%;
+  height: 640px;
+  background-color: #dddd;
+}

@@ -1,0 +1,6 @@
+.navigation{
+    grid-area: Navigation;
+    width:100%;
+    height: 80%;
+    background-color: #6fa8dc;
+}
