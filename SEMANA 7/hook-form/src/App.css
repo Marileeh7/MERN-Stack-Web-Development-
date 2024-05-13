@@ -1,0 +1,11 @@
+.App {
+  text-align: start;
+  font-family: Cursive, sans-serif;
+  padding: 5px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+

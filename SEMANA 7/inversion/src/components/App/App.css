@@ -1,18 +1,4 @@
-*{
-    margin: 0;
-    padding: 7px;
+.App{
+    display: flex;
+    justify-content: center;
 }
-.App div{
-    padding-inline: auto;
-    margin-inline: auto;
-    max-width: 300px;
-    flex-direction: column;
-    align-items: center;
-}
-button{ 
-    border-radius: 5px;
-    border: rgb(212, 246, 250);
-    background-color: rgb(212, 246, 250);
-}
-
-
