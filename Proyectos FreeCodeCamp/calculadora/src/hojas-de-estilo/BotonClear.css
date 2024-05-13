@@ -1,0 +1,19 @@
+.boton-clear{
+    height: 80px;
+    font-size: 1.6em;
+    display: flex;
+    flex: 1;
+    background-color: rgb(217, 183, 249);
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 45px;
+
+}
+
+.boton-clear:Hover{
+    background-color: yellowgreen;
+}
