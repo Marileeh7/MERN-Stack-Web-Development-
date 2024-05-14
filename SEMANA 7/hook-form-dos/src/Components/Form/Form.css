@@ -1,0 +1,64 @@
+.form {
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+}
+
+.firstName, .password, .cPassword, .lastName, .email {
+    max-width: 350px;
+    flex-wrap: wrap;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #bcf8f999;
+    border: 3px solid #050505;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.dataShow {
+    display: flex;
+    flex-direction: column;
+}
+
+.botonSubContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.botonSub {
+    max-width: 100px;
+    border-radius: 5px;
+    background-color: rgb(204, 248, 138);
+    padding: 10px;
+    margin-bottom: 25PX;
+}
+
+.titleData, .nameRegistration {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.titleData {
+    display: flex;
+    align-items: center; /* Asegura que los elementos hijos estén alineados verticalmente */
+}
+
+.error {
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    border-radius: 5px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,8 @@
+.App{
+  display: flex;
+  justify-content: center;
+  font-family: cursive, tahoma;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+}
