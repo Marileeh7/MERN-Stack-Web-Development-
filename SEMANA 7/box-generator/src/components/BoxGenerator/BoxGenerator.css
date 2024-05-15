@@ -1,18 +1,6 @@
 /* src/components/BoxGenerator/BoxGenerator.css */
 
-.box {
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-    display: inline-block;
-  }
-  
-  .boxes-container {
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .form-container {
+.form-container {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -22,32 +10,32 @@
     text-align: center;
   }
   
-  .input-field, .form-input {
-    width: 100%;
+  .form-input, .form-button {
+    width: 100%;   /* Asegura que ambos ocupen el ancho completo del contenedor */
     padding: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #ccc;
+    margin-bottom: 10px;  /* Espaciado uniforme */
     border-radius: 4px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho del elemento */
   }
   
-  .input-field:focus, .form-input:focus {
+  .form-input {
+    border: 2px solid #ccc;
+  }
+  
+  .form-input:focus {
     border-color: #6658f6;
     outline: none;
   }
   
-  .button, .form-button {
-    width: 100%;
-    padding: 10px;
+  .form-button {
     background-color: #6658f6;
     color: white;
-    border: none;
-    border-radius: 4px;
+    border: none; /* No border for the button */
     cursor: pointer;
     font-size: 16px;
   }
   
-  .button:hover, .form-button:hover {
+  .form-button:hover {
     background-color: #5848c2;
   }
   
