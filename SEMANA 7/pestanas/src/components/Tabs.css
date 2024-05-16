@@ -1,0 +1,69 @@
+.button {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid white; /* Bordes blancos que separan las pestañas */
+  transition: background-color 0.3s ease;
+  flex: 1; /* Asegura que todas las pestañas tengan la misma medida */
+  text-align: center;
+  color: black; /* Texto negro para las pestañas inactivas */
+  background-color: white; /* Fondo blanco para las pestañas inactivas */
+}
+
+.button:hover {
+  background-color: #ddd; /* Color al pasar el cursor sobre la pestaña */
+}
+
+.active {
+  background-color: black; /* Fondo negro para la pestaña activa */
+  color: white; /* Texto blanco para la pestaña activa */
+  border-bottom: 2px solid #000; /* Indica la pestaña activa */
+}
+
+.tab-content-container {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f8f9fa; /* Color gris claro para el contenedor de contenido */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Animación CSS */
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.tab-content-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tab-content-container.animate {
+  animation: fadeIn 0.5s; /* Animación JavaScript */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-content-container p {
+  margin: 0;
+}
+
+.tab-1-border {
+  border: 1px solid #ccc; /* Borde azul para el contenedor de la primera pestaña */
+}
+
+.font-weight-bold {
+  font-weight: bold; /* Letras en negritas */
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: flex-end; /* Alinea las pestañas al final */
+  align-items: center;
+}

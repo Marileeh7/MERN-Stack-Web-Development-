@@ -1,0 +1,12 @@
+.App {
+  background-color: #f8f9fa; /* Color gris claro para el fondo de la aplicación */
+  color: #343a40;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
