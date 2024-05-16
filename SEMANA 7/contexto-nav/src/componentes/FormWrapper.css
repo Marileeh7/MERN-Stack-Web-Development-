@@ -1,0 +1,6 @@
+/* src/componentes/FormWrapper.css */
+.formulario-wrapper {
+  width: 25%;
+  margin: 20px;
+  align-self: flex-start;
+}

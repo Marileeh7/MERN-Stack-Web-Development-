@@ -1,0 +1,10 @@
+/* src/componentes/Navbar.css */
+.navbar {
+  width: 100%;
+  background-color:rgb(140,48,197);
+  padding: 20px;
+  color:white;
+  text-align: right;
+  box-sizing: border-box;
+  margin: 0; /* Asegúrate de que no haya margen */
+}
