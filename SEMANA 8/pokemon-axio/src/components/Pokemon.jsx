@@ -4,7 +4,7 @@ import '../App.css';
 
 const Pokemon = ({ setNombresPokemon, setError }) => {
   const [offset, setOffset] = useState(0);
-  const [limit] = useState(807); // Establecer el límite a 807 para obtener todos los Pokémon
+  const [limit] = useState(807); // 807 para obtener todos los Pokemon
 
   const fetchPokemon = async () => {
     try {
@@ -28,7 +28,7 @@ const Pokemon = ({ setNombresPokemon, setError }) => {
 
   return (
     <div className="boton-centro">
-      <button onClick={fetchPokemon} className="boton-pokemon">Obtener Pokémon</button>
+      <button onClick={fetchPokemon} className="boton-pokemon">Obtener Pokemon</button>
     </div>
   );
 };
