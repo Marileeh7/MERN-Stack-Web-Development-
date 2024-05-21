@@ -23,10 +23,9 @@ body, html {
   margin: 2em 0;
 }
 
-.boton-pokemon {
+.boton-pokemon, .boton-cerrar {
   background-color: #ff0505;
   color: white;
-  border: none;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -92,5 +91,32 @@ h1 {
   font-size: 50px;
   color: #ffcc03;
   -webkit-text-stroke: 2px rgb(44, 111, 192); /* Grosor y color del trazo */
-  font-weight: 600;
+  font-weight: 800px;
+}
+
+/* Nuevos estilos añadidos */
+
+.detalles-container {
+  position: fixed;
+  top: 10%;
+  left: 30%;
+  transform: translate(-50%, -10%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-align: center; /* Centra el contenido del modal */
+}
+
+
+.boton-cerrar:hover {
+  background-color: #ffcc03;
+  border: 2px, solid, rgb(44, 111, 192);
+}
+
+/* Asegurarse que la imagen esté centrada */
+.detalles-pokemon img {
+  display: block;
+  margin: 0 auto;
 }
