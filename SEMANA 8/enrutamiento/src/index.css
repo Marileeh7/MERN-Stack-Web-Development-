@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    font-family: 'Sans-serif';
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    height: 100vh;
+    text-align: center;
+  }
+  
+  #root {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  h1 {
+    margin: 20px 0; 
+  }
+  
+  
