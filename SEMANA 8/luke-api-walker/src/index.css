@@ -70,7 +70,8 @@ select:hover, input[type="number"]:hover {
 .error {
   margin-left: 20px;
   color: red;
-  text-align: center; /
+  text-align: center; 
+}
 
 .error img {
   display: block;
