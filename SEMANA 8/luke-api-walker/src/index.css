@@ -4,14 +4,14 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Alinear verticalmente arriba */
+  align-items: flex-start; 
   height: 100vh;
   background-color: #f4f4f9;
 }
 
 .App {
   text-align: center;
-  margin-top: 20px; /* Margen superior para separar del borde superior */
+  margin-top: 20px; 
 }
 
 form.search {
@@ -36,7 +36,7 @@ select, input[type="number"], input[type="submit"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   height: 40px; /* Altura uniforme */
-  width: 150px; /* Ancho uniforme */
+  width: 180px; /* Ancho uniforme */
 }
 
 input[type="submit"] {
@@ -44,8 +44,8 @@ input[type="submit"] {
   color: white;
   border: none;
   cursor: pointer;
-  width: auto; /* Ancho automático para ajustarse al contenido */
-  padding: 0 20px; /* Añadir relleno horizontal */
+  width: auto; 
+  padding: 0 20px; 
 }
 
 input[type="submit"]:hover {
@@ -58,10 +58,9 @@ select:hover, input[type="number"]:hover {
 
 .results {
   margin-top: 20px;
-  text-align: left; /* Alinear el texto a la izquierda */
-  width: 100%;
+  text-align: left; 
   display: flex;
-  justify-content: flex-start; /* Alinear horizontalmente a la izquierda */
+  justify-content: flex-start; 
 }
 
 .result {
@@ -71,6 +70,11 @@ select:hover, input[type="number"]:hover {
 .error {
   margin-left: 20px;
   color: red;
+  text-align: center; /
+
+.error img {
+  display: block;
+  margin: 0 auto;
 }
 
 img {

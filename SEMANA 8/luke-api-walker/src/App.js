@@ -35,8 +35,8 @@ const App = () => {
         <div className='searchSelect'>
           <label htmlFor="searchType">Search for:</label>
           <select name='searchType' value={searchType} onChange={(e) => setSearchType(e.target.value)}>
-            <option value="people">People (Enter a number from 1 to 82)</option>
-            <option value="planets">Planets (Enter a number from 1 to 60)</option>
+            <option value="people">People (Number from 1 to 82)</option>
+            <option value="planets">Planets (Number from 1 to 60)</option>
           </select>
         </div>
         <div className='searchId'>
