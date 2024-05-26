@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinear verticalmente arriba */
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+.App {
+  text-align: center;
+  margin-top: 20px; /* Margen superior para separar del borde superior */
+}
+
+form.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchSelect, .searchId {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+label {
+  font-weight: bold;
+}
+
+select, input[type="number"], input[type="submit"] {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 40px; /* Altura uniforme */
+  width: 150px; /* Ancho uniforme */
+}
+
+input[type="submit"] {
+  background-color: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: auto; /* Ancho automático para ajustarse al contenido */
+  padding: 0 20px; /* Añadir relleno horizontal */
+}
+
+input[type="submit"]:hover {
+  background-color: #444;
+}
+
+select:hover, input[type="number"]:hover {
+  border-color: #888;
+}
+
+.results {
+  margin-top: 20px;
+  text-align: left; /* Alinear el texto a la izquierda */
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* Alinear horizontalmente a la izquierda */
+}
+
+.result {
+  margin-left: 20px;
+}
+
+.error {
+  margin-left: 20px;
+  color: red;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
