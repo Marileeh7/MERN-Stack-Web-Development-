@@ -3,15 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Main from './views/Main';
 import Details from './views/Detail';
-import Update from './views/Update';
-import ParentComponent from './components/ParentComponent'; // Asegúrate de que la ruta de importación sea correcta
+import Update from './views/Update';// Asegúrate de que la ruta de importación sea correcta
 
 function App() {
   return (
     <div className="App">
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/products" element={<ParentComponent />} />
           <Route path="/products/:id" element={<Details />} />
           <Route path="/products/:id/edit" element={<Update />} />
         </Routes>
@@ -19,5 +17,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

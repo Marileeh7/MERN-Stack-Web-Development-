@@ -8,7 +8,7 @@ const Main = () => {
     const [products, setProducts] = useState([]);
     const [loaded, setLoaded] = useState(false);
 
-    // Utilizo useEffect para cargar los productos al montar el componente
+    // Utilizo useEffect para cargar los productos al cargar el componente
     useEffect(() => {
         axios.get('http://localhost:8000/api/products')
             .then(res => {
@@ -19,12 +19,18 @@ const Main = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Product Manager</h1>
-            <ProductForm /> {/* Formulario para crear un nuevo producto */}
+        <div className="container">
+            <div className="upper-section">
+            
+                <ProductForm /> {/* Formulario para crear un nuevo producto */}
+            </div>
             <hr />
-            {loaded && <ProductList products={products} />} {/* Lista de productos cargados */}
+            <div className="lower-section">
+                {loaded && <ProductList products={products} />}
+            </div>
         </div>
+        
+        
     );
 }
 

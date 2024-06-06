@@ -1,28 +1,32 @@
-// src/components/ProductForm.js
 import React, { useState } from "react";
 import axios from "axios";
 
-const ProductForm = ({ titleIn, priceIn, descriptionIn, submitProduct }) => {
-  const [title, setTitle] = useState(titleIn);
-  const [price, setPrice] = useState(priceIn);
-  const [description, setDescription] = useState(descriptionIn);
+const ProductForm = ({ submitProduct }) => {
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
+  const [error, setError] = useState(null);
 
-  // Procesa el producto y lo envía al backend
   const ProcessProduct = (e) => {
     e.preventDefault();
     const newProduct = { title, price, description };
-    axios.post("http://localhost:8000/api/products", newProduct)
+    axios.post('http://localhost:8000/api/products', newProduct)
       .then(res => {
         submitProduct(res.data); // Añade el nuevo producto a la lista
         setTitle("");
         setPrice("");
         setDescription("");
+        setError(null);
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.error(err);
+        setError(err.response ? err.response.data.message : "Error al enviar los datos.");
+      });
   };
 
   return (
     <div className="form-container">
+      <h1>Product Manager</h1>
       <form onSubmit={ProcessProduct}>
         <div className="form-group">
           <label>Title</label>
@@ -32,6 +36,7 @@ const ProductForm = ({ titleIn, priceIn, descriptionIn, submitProduct }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter product title"
+            required
           />
         </div>
         <div className="form-group">
@@ -42,6 +47,7 @@ const ProductForm = ({ titleIn, priceIn, descriptionIn, submitProduct }) => {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             placeholder="Enter product price"
+            required
           />
         </div>
         <div className="form-group">
@@ -52,9 +58,11 @@ const ProductForm = ({ titleIn, priceIn, descriptionIn, submitProduct }) => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Enter product description"
+            required
           />
         </div>
         <input type="submit" value="Create" />
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
   );

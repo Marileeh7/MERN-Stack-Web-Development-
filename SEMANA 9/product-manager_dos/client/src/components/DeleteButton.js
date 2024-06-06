@@ -11,9 +11,7 @@ const DeleteButton = ({ productId, removingDOM }) => {
   };
 
   return (
-    <button onClick={deleteProduct}>
-      Delete
-    </button>
+    <button className="delete-button" onClick={deleteProduct}>Borrar</button>
   );
 };
 
