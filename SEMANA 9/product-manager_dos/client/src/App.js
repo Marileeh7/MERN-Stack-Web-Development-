@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Main from './views/Main';
 import Details from './views/Detail';
-import Update from './views/Update';// Asegúrate de que la ruta de importación sea correcta
+import Update from './views/Update';
 
 function App() {
   return (
