@@ -1,9 +1,10 @@
+// src/components/ProductForm.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PropTypes from 'prop-types';
 
 // Defino el componente ProductForm, que se utiliza para crear y editar productos
-const ProductForm = ({ addProduct, product, editMode }) => {
+const ProductForm = ({ addProduct, updateProduct, product, editMode }) => {
   // Defino estados para los campos del formulario y para los posibles errores
   const [title, setTitle] = useState(product ? product.title : '');
   const [price, setPrice] = useState(product ? product.price : '');
@@ -34,6 +35,7 @@ const ProductForm = ({ addProduct, product, editMode }) => {
             'Content-Type': 'application/json'
           }
         });
+        updateProduct(response.data);  // Llamo a la función updateProduct para actualizar el producto en la lista
       } else {
         // Si no, hago una solicitud POST
         response = await axios.post(`${URL_BASE}/products`, newProduct, {
@@ -110,6 +112,7 @@ const ProductForm = ({ addProduct, product, editMode }) => {
 
 ProductForm.propTypes = {
   addProduct: PropTypes.func.isRequired,
+  updateProduct: PropTypes.func.isRequired,
   product: PropTypes.shape({
     title: PropTypes.string,
     price: PropTypes.number,
