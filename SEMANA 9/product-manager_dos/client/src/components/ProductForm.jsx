@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { ProductFormPropTypes } from './PropTypes';
 
 const ProductForm = ({ addProduct, product, editMode }) => {
   const [title, setTitle] = useState(product ? product.title : '');
@@ -96,7 +97,7 @@ const ProductForm = ({ addProduct, product, editMode }) => {
     </div>
   );
 };
-
+ProductForm.propTypes = ProductFormPropTypes;
 export default ProductForm;
 
 
