@@ -1,6 +1,8 @@
+require ('dotenv');
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/product_manager_dos", {
+const URI = process.env.MONGO_URL;
+mongoose.connect(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
