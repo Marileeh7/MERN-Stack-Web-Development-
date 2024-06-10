@@ -10,7 +10,7 @@ const ProductManager = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/products')
+    axios.get('https://coding-dojo-mern-rigp.vercel.app/api/products')
       .then(res => {
         setProducts(res.data);
         setLoaded(true);
@@ -23,7 +23,7 @@ const ProductManager = () => {
   };
 
   const removeProduct = (id) => {
-    axios.delete(`http://localhost:8000/api/products/${id}`)
+    axios.delete(`https://coding-dojo-mern-rigp.vercel.app/api/products/${id}`)
       .then(() => {
         setProducts(products.filter(product => product._id !== id));
       })

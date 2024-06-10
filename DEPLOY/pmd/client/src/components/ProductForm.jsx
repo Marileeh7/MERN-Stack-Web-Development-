@@ -7,7 +7,7 @@ const ProductForm = ({ addProduct, product, editMode }) => {
   const [price, setPrice] = useState(product ? product.price : '');
   const [description, setDescription] = useState(product ? product.description : '');
   const [error, setError] = useState(null);
-  const URL_BASE = "http://localhost:8000/api";
+  const URL_BASE = "https://coding-dojo-mern-rigp.vercel.app/api";
 
   useEffect(() => {
     if (product) {

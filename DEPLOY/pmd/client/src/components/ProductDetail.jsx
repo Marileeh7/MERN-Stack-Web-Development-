@@ -8,13 +8,13 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/products/${id}`)
+    axios.get(`https://coding-dojo-mern-rigp.vercel.app/api/products/${id}`)
       .then(res => setProduct(res.data))
       .catch(err => console.error(err));
   }, [id]);
 
   const handleDelete = () => {
-    axios.delete(`http://localhost:8000/api/products/${id}`)
+    axios.delete(`https://coding-dojo-mern-rigp.vercel.app/api/products/${id}`)
       .then(() => navigate("/"))
       .catch(err => console.error(err));
   };
