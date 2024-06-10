@@ -6,6 +6,7 @@ import ProductManager from './components/ProductManager';
 const container = document.getElementById('root');
 const root = createRoot(container);
 
+
 root.render(
   <React.StrictMode>
     <ProductManager />
