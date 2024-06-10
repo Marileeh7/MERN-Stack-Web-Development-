@@ -55,7 +55,7 @@ const ProductForm = ({ addProduct, product, editMode }) => {
 
   return (
     <div className="form-container">
-      <h2>{editMode ? 'Edit Product' : 'New Product'}</h2>
+      <h className='titlee'>{editMode ? 'Edit Product' : 'New Product'}</h>
       <form onSubmit={handleSubmit}>   
         <div className="form-group">
         

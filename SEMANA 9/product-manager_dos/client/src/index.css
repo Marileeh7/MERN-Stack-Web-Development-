@@ -144,6 +144,13 @@ span {
   margin: 10px 0;
   color: #666;
 }
+.titlee{
+  margin: 8px;
+  font-size: 2em;
+  color: #333;
+  margin: 12px;
+  font-weight:600;
+}
 
 .card .price {
   font-size: 1.2em;
