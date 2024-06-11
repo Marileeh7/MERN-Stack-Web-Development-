@@ -13,7 +13,7 @@ const AuthorManager = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/authors')
+        axios.get('https://my-authors.vercel.app/api/authors')
             .then(res => {
                 const sortedAuthors = _.orderBy(res.data, ['name'], ['asc']);
                 setAuthors(sortedAuthors);
@@ -36,7 +36,7 @@ const AuthorManager = () => {
     };
 
     const removeAuthor = (id) => {
-        axios.delete(`http://localhost:8000/api/authors/${id}`)
+        axios.delete(`https://my-authors.vercel.app/api/authors/${id}`)
             .then(() => {
                 setAuthors(authors.filter(author => author._id !== id));
             })

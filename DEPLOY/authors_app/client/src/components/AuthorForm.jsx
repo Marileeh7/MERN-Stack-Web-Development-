@@ -25,7 +25,7 @@ const AuthorForm = ({ addAuthor, updateAuthor, author, setAuthor, formType }) =>
     useEffect(() => {
         // Si el formType es "update" y hay un id en los parámetros, hago una solicitud GET para obtener los datos del autor y llenar el formulario.
         if (formType === "update" && params.id) {
-            axios.get(`http://localhost:8000/api/authors/${params.id}`)
+            axios.get(`https://my-authors.vercel.app/api/authors/${params.id}`)
                 .then(res => setAuthor(res.data)) // Si la solicitud es exitosa, establezco los datos del autor en el estado.
                 .catch(err => console.error(err)); // Si hay un error, lo registro en la consola.
         }
@@ -45,7 +45,7 @@ const AuthorForm = ({ addAuthor, updateAuthor, author, setAuthor, formType }) =>
         e.preventDefault(); // Prevengo el comportamiento predeterminado del formulario.
         try {
             if (formType === "create") { // Si el formType es "create", hago una solicitud POST para crear un nuevo autor.
-                const response = await axios.post('http://localhost:8000/api/authors', author, {
+                const response = await axios.post('https://my-authors.vercel.app/api/authors', author, {
                     headers: {
                         'Content-Type': 'application/json' // Especifico que el contenido de la solicitud es JSON.
                     }
@@ -53,7 +53,7 @@ const AuthorForm = ({ addAuthor, updateAuthor, author, setAuthor, formType }) =>
                 addAuthor(response.data); //Llamo a la función addAuthor con los datos del nuevo autor//
                 setAuthor({ name: '', lastName: '', quote: '' }); // Restablezco el formulario.
             } else if (formType === "update") { // Si el formType es "update", hago una solicitud PUT para actualizar el autor existente.
-                const response = await axios.put(`http://localhost:8000/api/authors/${params.id}`, author, {
+                const response = await axios.put(`https://my-authors.vercel.app/api/authors/${params.id}`, author, {
                     headers: {
                         'Content-Type': 'application/json' // Especifico que el contenido de la solicitud es JSON.
                     }

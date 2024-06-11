@@ -13,7 +13,7 @@ const AuthorTable = () => {
     }, []);
 
     const getAllAuthors = async () => {
-        await axios.get('http://localhost:8000/api/authors')
+        await axios.get('https://my-authors.vercel.app/api/authors')
             .then(res => {
                 setAuthorsList(_.orderBy(res.data, ['name'], ['asc']));
             })

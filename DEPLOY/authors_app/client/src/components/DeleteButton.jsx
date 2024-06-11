@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const DeleteButton = ({ author, changeStyle, removeAuthorFromList }) => {
     const deleteAuthor = (authorID) => {
-        axios.delete(`http://localhost:8000/api/authors/${authorID}`)
+        axios.delete(`https://my-authors.vercel.app/api/authors/${authorID}`)
             .then(res => {
                 removeAuthorFromList(authorID);
                 console.log(res);
