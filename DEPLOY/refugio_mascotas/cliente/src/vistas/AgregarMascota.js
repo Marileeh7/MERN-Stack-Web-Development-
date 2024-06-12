@@ -42,7 +42,16 @@ const AgregarMascota = () => {
           navigate('/');
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log("Detalles del error:", err.response);
+        if (err.response && err.response.data && err.response.data.error) {
+          setError(err.response.data.error);
+        } else if (err.response && err.response.data && err.response.data.mensaje) {
+          setError({ mensaje: err.response.data.mensaje });
+        } else {
+          setError({ mensaje: "Ocurrió un error. Inténtalo de nuevo más tarde." });
+        }
+      });
   };
 
   return (
