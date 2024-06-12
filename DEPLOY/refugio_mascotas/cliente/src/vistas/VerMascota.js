@@ -15,12 +15,13 @@ const VerMascota = () => {
   const [likes, setLikes] = useState(0);
   const [likeDisabled, setLikeDisabled] = useState(false);
   const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(`http://localhost:8000/api/mascotas/${_id}`)
       .then(res => setMascota(res.data.mascota))
-      .catch(err => console.log(err));
+      .catch(err => setError('Error al obtener los detalles de la mascota.'));
   }, [_id]);
 
   const adoptarMascota = () => {
@@ -31,6 +32,7 @@ const VerMascota = () => {
       })
       .catch(err => {
         setMessage('Falló en el proceso de adopción');
+        setError('No se pudo adoptar a la mascota.');
       });
   };
 
@@ -44,11 +46,12 @@ const VerMascota = () => {
       <h2>Detalles sobre: {mascota.nombre}</h2>
       <p>Tipo: {mascota.tipo}</p>
       <p>Descripción: {mascota.descripcion}</p>
-      <p>Habilidades: {mascota.habilidadUno} {mascota.habilidadDos} {mascota.habilidadTres}</p>
+      <p>Habilidades: {[mascota.habilidadUno, mascota.habilidadDos, mascota.habilidadTres].filter(Boolean).join(', ')}</p>
       <button className="btn btn-success" onClick={adoptarMascota}>Adoptar a {mascota.nombre}</button>
       <button className="btn btn-danger" onClick={incrementarLikes} disabled={likeDisabled}>Me gusta {mascota.nombre} ({likes} Me gusta)</button>
       <BotonLink to="/" className="btn btn-primary">Volver a la lista</BotonLink>
       {message && <div className={`message ${message.includes('adoptado') ? 'success' : 'error'}`}>{message}</div>}
+      {error && <div className="text-danger">{error}</div>}
     </div>
   );
 };

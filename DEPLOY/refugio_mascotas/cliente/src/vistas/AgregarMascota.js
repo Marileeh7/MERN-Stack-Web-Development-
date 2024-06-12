@@ -1,6 +1,6 @@
 // cliente/src/vistas/AgregarMascota.js
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from 'axios';  // Importación de Axios
 import FormularioMascota from '../componentes/FormularioMascota';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,7 +47,6 @@ const AgregarMascota = () => {
 
   return (
     <div>
-      
       <FormularioMascota
         form={form}
         onChangeHandler={onChangeHandler}
