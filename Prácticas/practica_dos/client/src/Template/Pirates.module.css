@@ -1,0 +1,231 @@
+/* Estilo general del cuerpo */
+body {
+    background-color: #f0f0f0; /* Gris claro */
+    color: #000000; /* Negro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para todos los botones */
+button, .btn {
+    background-color: #007BFF; /* Azul */
+    color: white; /* Blanco */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px; /* Incrementado el radio de borde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadida sombra */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Añadida transición */
+}
+
+button:hover, .btn:hover {
+    background-color: #0056b3; /* Azul oscuro */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Incrementada sombra en hover */
+}
+
+button:active, .btn:active {
+    background-color: #004494; /* Azul más oscuro en active */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reducida sombra en active */
+}
+
+/* Estilo para todos los inputs */
+input, select, textarea {
+    background-color: #ffffff; /* Blanco */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Incrementado el radio de borde */
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #007BFF; /* Azul */
+    outline: none;
+    box-shadow: 0 0 10px #007BFF;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    background-color: #ffffff; /* Blanco */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Incrementado el radio de borde */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadida sombra */
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000; /* Negro */
+}
+
+.card-content {
+    font-size: 16px;
+    color: #333333; /* Gris oscuro */
+}
+
+/* Estilos para imágenes */
+img.keep-aspect {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Incrementado el radio de borde */
+}
+
+/* Estilos generales */
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.px-2 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.align-items-stretch {
+    align-items: stretch !important;
+}
+
+.my-3 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.p-5 {
+    padding: 3rem !important;
+}
+
+.rounded {
+    border-radius: 0.25rem !important;
+}
+
+.border {
+    border: 1px solid #dee2e6 !important;
+}
+
+.border-dark {
+    border-color: #343a40 !important;
+}
+
+.border-3 {
+    border-width: 3px !important;
+}
+
+/* Estilos personalizados */
+.header {
+    height: 140px;
+    background-color: #d5d5d5; /* Gris claro */
+    border-radius: 8px; /* Incrementado el radio de borde */
+}
+
+.bgOrange {
+    background-color: #f1f3f4; /* Gris claro */
+    width: 95% !important;
+    min-width: 95% !important;
+    border-radius: 8px; /* Incrementado el radio de borde */
+}
+
+.absolutePosition {
+    position: relative;
+}
+
+.centerTitle {
+    display: inline-block;
+    position: absolute;
+    width: 400px;
+    top: 20px;
+    left: calc(50% - 200px);
+    text-align: center;
+    color: rgb(15, 14, 14);
+}
+.endButton {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    width: 200px;
+    background-color: #007BFF; /* Azul */
+    color: white; /* Blanco */
+    border: none; /* Eliminamos los bordes sólidos */
+    border-radius: 8px; /* Bordes redondeados */
+    height: 50px; /* Aumentamos un poco la altura */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Añadimos transición para transformaciones */
+    font-size: 16px;
+    font-weight: bold; /* Fuente en negrita */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.endButton:hover {
+    background-color: #0056b3; /* Azul oscuro */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+.endButton:active {
+    background-color: #0056b3; /* Azul más oscuro en active */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra más pequeña en active */
+    transform: translateY(1px); /* Efecto de presión */
+}
+
+
+
+.endButton:hover {
+    background-color: #333333; /* Gris oscuro */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Incrementada sombra en hover */
+}
+
+.endButton:active {
+    background-color: #000000; /* Negro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reducida sombra en active */
+}
+
+.content {
+    min-height: calc(100vh - 150px);
+}
+
+.submit-button {
+  width: 200px !important;
+  background-color: #007BFF !important; /* Azul */
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-size: 16px !important;
+  margin: 4px 2px !important;
+  cursor: pointer !important;
+  border-radius: 8px !important; /* Incrementado el radio de borde */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Añadida sombra */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease !important; /* Añadida transición */
+}
+
+.submit-button:hover {
+  background-color: #0056b3 !important; /* Azul oscuro */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1) !important; /* Incrementada sombra en hover */
+}
+
+.submit-button:active {
+  background-color: #004494 !important; /* Azul más oscuro en active */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Reducida sombra en active */
+}

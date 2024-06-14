@@ -1,0 +1,12 @@
+.mh-400 {
+    max-height: 400px;
+}
+
+.mw-75 {
+    max-width: 75%;
+}
+
+.keep-aspect {
+    width: auto;
+    height: auto;
+}

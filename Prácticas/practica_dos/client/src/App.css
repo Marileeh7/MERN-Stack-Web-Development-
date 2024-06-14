@@ -1,0 +1,184 @@
+/* Estilo general del cuerpo */
+body {
+    background-color: #f0f0f0; /* Gris claro */
+    color: #000000; /* Negro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para todos los botones */
+button, .btn {
+    background-color: #007BFF; /* Azul */
+    color: white; /* Blanco */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px; /* Incrementado el radio de borde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadida sombra */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Añadida transición */
+}
+
+button:hover, .btn:hover {
+    background-color: #0056b3; /* Azul oscuro */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Incrementada sombra en hover */
+}
+
+button:active, .btn:active {
+    background-color: #004494; /* Azul más oscuro en active */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reducida sombra en active */
+}
+
+/* Estilo para todos los inputs */
+input, select, textarea {
+    background-color: #ffffff; /* Blanco */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #007BFF; /* Azul */
+    outline: none;
+    box-shadow: 0 0 10px #007BFF;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    background-color: #ffffff; /* Blanco */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Incrementado el radio de borde */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadida sombra */
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000; /* Negro */
+}
+
+.card-content {
+    font-size: 16px;
+    color: #333333; /* Gris oscuro */
+}
+
+/* Estilos para imágenes */
+img.keep-aspect {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Estilos generales */
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.px-2 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.align-items-stretch {
+    align-items: stretch !important;
+}
+
+.my-3 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.p-5 {
+    padding: 3rem !important;
+}
+
+.rounded {
+    border-radius: 0.25rem !important;
+}
+
+.border {
+    border: 1px solid #dee2e6 !important;
+}
+
+.border-dark {
+    border-color: #343a40 !important;
+}
+
+.border-3 {
+    border-width: 3px !important;
+}
+
+/* Estilos personalizados */
+.header {
+    height: 150px;
+    background-color: #333333; /* Gris oscuro */
+}
+
+.bgOrange {
+    background-color: #ffffff; /* Blanco */
+    width: 95% !important;
+    min-width: 95% !important;
+}
+
+.absolutePosition {
+    position: relative;
+}
+
+.centerTitle {
+    display: inline-block;
+    position: absolute;
+    width: 400px;
+    top: 20px;
+    left: calc(50% - 200px);
+    text-align: center;
+    color: white;
+}
+
+.endButton {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    width: 200px;
+    background-color: #007BFF; /* Azul */
+    color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    border-radius: 8px; /* Incrementado el radio de borde */
+    height: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadida sombra */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Añadida transición */
+}
+
+.endButton:hover {
+    background-color: #0056b3; /* Azul oscuro */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Incrementada sombra en hover */
+}
+
+.endButton:active {
+    background-color: #004494; /* Azul más oscuro en active */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reducida sombra en active */
+}
+
+.content {
+    min-height: calc(100vh - 150px);
+}
