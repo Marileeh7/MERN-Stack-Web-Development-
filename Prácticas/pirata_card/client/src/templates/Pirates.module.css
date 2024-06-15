@@ -1,0 +1,42 @@
+.header{
+    height: 150px;
+    background-color: #783F04;
+}
+
+.bgOrange{
+    background-color: #FF9900;
+    width: 95% !important;
+    min-width: 95% !important;
+}
+.absolutePosition {
+    position: relative;
+}
+
+.centerTitle {
+    display: inline-block;
+    position: absolute;
+    width: 400px;
+    top: 20px;
+    left: calc(50% - 200px);
+    text-align: center;
+    color: white;
+}
+
+.endButton {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    width: 200px;
+    background-color: #085394;
+    color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    border-radius: 0px;
+    height: 40px;
+}
+
+
+.content {
+    min-height: calc(100vh - 150px);
+}
