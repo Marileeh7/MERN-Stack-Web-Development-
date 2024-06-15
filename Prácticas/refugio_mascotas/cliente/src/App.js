@@ -1,14 +1,13 @@
-// cliente/src/App.js
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Principal from './vistas/Principal';
-import AgregarMascota from './vistas/AgregarMascota';
-import VerMascota from './vistas/VerMascota';
-import ActualizarMascota from './vistas/ActualizarMascota';
-import Login from './vistas/Login';
-import Register from './vistas/Register';
+import Dashboard from './views/Dashboard';
+import AddProject from './views/AddProject';
+import ViewProject from './views/ViewProject';
+import UpdateProject from './views/UpdateProject';
+import Login from './views/Login';
+import Register from './views/Register';
 import io from 'socket.io-client';
 import axios from 'axios';
 
@@ -20,17 +19,11 @@ const socket = io('http://localhost:8000', {
   transports: ['websocket'],
   pingInterval: 25000,
   pingTimeout: 20000,
-  withCredentials: true,
+  withCredentials: true
 });
 
-const BotonLink = ({ to, children, className }) => (
-  <Link to={to} className={`btn ${className}`}>
-    {children}
-  </Link>
-);
-
 const App = () => {
-  const [mascotas, setMascotas] = useState([]);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     // Configuración de los eventos de Socket.IO
@@ -42,44 +35,44 @@ const App = () => {
       console.log('Desconectado de Socket.IO');
     });
 
-    socket.on('nueva_mascota', (nuevaMascota) => {
-      setMascotas((prevMascotas) => [...prevMascotas, nuevaMascota]);
+    socket.on('new_project', (newProject) => {
+      setProjects((prevProjects) => [...prevProjects, newProject]);
     });
 
-    socket.on('actualizar_mascota', (mascotaActualizada) => {
-      setMascotas((prevMascotas) =>
-        prevMascotas.map((mascota) =>
-          mascota._id === mascotaActualizada._id ? mascotaActualizada : mascota
+    socket.on('update_project', (updatedProject) => {
+      setProjects((prevProjects) =>
+        prevProjects.map((project) =>
+          project && project._id === updatedProject._id ? updatedProject : project
         )
       );
     });
 
-    socket.on('mascota_eliminada', (idMascota) => {
-      setMascotas((prevMascotas) =>
-        prevMascotas.filter((mascota) => mascota._id !== idMascota)
+    socket.on('delete_project', (idProject) => {
+      setProjects((prevProjects) =>
+        prevProjects.filter((project) => project && project._id !== idProject)
       );
     });
 
     return () => {
       socket.off('connect');
       socket.off('disconnect');
-      socket.off('nueva_mascota');
-      socket.off('actualizar_mascota');
-      socket.off('mascota_eliminada');
+      socket.off('new_project');
+      socket.off('update_project');
+      socket.off('delete_project');
     };
   }, []);
 
   return (
     <Router>
       <div className="nav">
-        <h1 className="site-title">Refugio de Mascotas</h1>
-        <BotonLink to="/mascotas/nueva" className="btn-primary create-btn">Agregar una Mascota</BotonLink>
+        <h1 className="site-title">Project Manager</h1>
+        <Link to="/projects/new" className="btn btn-primary create-btn">Add a Project</Link>
       </div>
       <Routes>
-        <Route path="/" element={<Principal mascotas={mascotas} setMascotas={setMascotas} />} />
-        <Route path="/mascotas/nueva" element={<AgregarMascota />} />
-        <Route path="/mascotas/:_id" element={<VerMascota />} />
-        <Route path="/mascotas/actualizar/:_id" element={<ActualizarMascota />} />
+        <Route path="/" element={<Dashboard projects={projects.filter(project => project !== null)} setProjects={setProjects} />} />
+        <Route path="/projects/new" element={<AddProject />} />
+        <Route path="/projects/:_id" element={<ViewProject />} />
+        <Route path="/projects/update/:_id" element={<UpdateProject />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
