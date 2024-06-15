@@ -5,22 +5,15 @@ import axios from "axios";
 import _ from "lodash";
 
 const DeleteButton = (props) => {
-  // --------------------------------------------------
-  // I) HOOKS AND VARIABLES
-  // --------------------------------------------------
+
 
   const { pet, removePetFromList, petId, changeStyle } = props;
-  // For Create -> destructuring pet and removePetFromList from props
-  // For Update -> destructuring petId and changeStyle from props
-
+ 
   // Nagivate Hook
   const navigate = useNavigate();
 
-  // --------------------------------------------------
-  // II) HANDLERS AND AUXILIAR FUNCTIONS
-  // --------------------------------------------------
 
-  // i) Handlers
+  // Handlers
   const handleOnClickDeleteButton = async (e) => {
     if (pet) {
       // Coming from CreatePage
@@ -33,7 +26,7 @@ const DeleteButton = (props) => {
     }
   };
 
-  // ii) API Calls
+  // API Calls
   const deletePetById = async (petId) => {
     try {
       let res = await axios.delete("http://localhost:8000/api/pets/" + petId, {
@@ -45,9 +38,6 @@ const DeleteButton = (props) => {
     }
   };
 
-  // --------------------------------------------------
-  // III) JSX
-  // --------------------------------------------------
   return (
     <>
       <button

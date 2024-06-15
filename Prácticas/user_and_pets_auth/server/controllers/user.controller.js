@@ -1,24 +1,20 @@
-// ---------------------------------------------------
-// CONTROLLER SETUP - User
-// ---------------------------------------------------
 
-// 1) Importing External Libraries
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { ObjectId } = mongoose.Types; // Destructuring assignment to get ObjectId
 
-// 2) Importing Model
+//  Importing Model
 const UserModel = require("../models/user.model");
 
-// 3) Exporting Controller functions
+// Exporting Controller functions
 module.exports = {
   // I) REGISTER
   register: (req, res) => {
-    // i) Create a User instance with info passed in request
+    // Create a User instance with info passed in request
     // (this triggers our virtual field creation)
     const newUser = new UserModel(req.body);
-    // ii) Save to the database newUser instance
+    // Save to the database newUser instance
     newUser
       .save()
       .then((newUser) => {
@@ -52,7 +48,7 @@ module.exports = {
           .then((isPasswordValid) => {
             // If password is valid, then create a token and send it to the client by a cookie
             if (isPasswordValid) {
-              // i) Create a token to store info using JWTs
+              //  Create a token to store info using JWTs
               const userInfo = {
                 _id: user._id,
                 name: user.name,
@@ -60,7 +56,7 @@ module.exports = {
               };
               const userToken = jwt.sign(userInfo, process.env.JWT_SECRET);
 
-              // ii) Create cookie in HTTP response and attach signed token to it
+              //  Create cookie in HTTP response and attach signed token to it
               const cookieOptions = {
                 httpOnly: true, // this will make it so that JS on the client cannot access the cookie
                 expires: new Date(Date.now() + 900000000), // time until they have to log in again

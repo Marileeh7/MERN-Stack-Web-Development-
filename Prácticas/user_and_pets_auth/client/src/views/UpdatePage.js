@@ -5,20 +5,10 @@ import PetForm from '../components/PetForm'
 
 const UpdatePage = (props) => {
 
-  // ---------------------------------------------
-  // I) VARIABLES & HOOKS
-  // ---------------------------------------------
 
   // Destructuring Props
   const { user } = props;
 
-  // ---------------------------------------------
-  // II) HANDLERS & AUX FUNCTIONS
-  // ---------------------------------------------
-
-  // ---------------------------------------------
-  // III) JSX
-  // ---------------------------------------------
   return (
     <div>
 
@@ -32,4 +22,4 @@ const UpdatePage = (props) => {
   )
 }
 
-export default UpdatePage
+export default UpdatePage;

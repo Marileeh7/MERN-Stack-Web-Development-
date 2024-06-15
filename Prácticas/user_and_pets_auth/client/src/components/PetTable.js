@@ -7,10 +7,7 @@ import axios from "axios";
 import _ from "lodash";
 
 const PetTable = (props) => {
-  // ---------------------------------------------
-  // I) VARIABLES & HOOKS
-  // ---------------------------------------------
-
+ 
   // Destructuring Props
   const { user } = props;
 
@@ -23,9 +20,7 @@ const PetTable = (props) => {
     getAllPets();
   }, []);
 
-  // ---------------------------------------------
-  // II) HANDLERS & AUX FUNCTIONS
-  // ---------------------------------------------
+
 
   const getAllPets = async () => {
     try {
@@ -42,11 +37,6 @@ const PetTable = (props) => {
     // Remove pet from petsList
     setPetsList(petsList.filter((pet) => pet._id !== petId));
   };
-
-  // ---------------------------------------------
-  // III) JSX
-  // ---------------------------------------------
-
   return (
     <div className="w-75 mt-4">
       <table className="table table-striped">

@@ -39,4 +39,4 @@ const PirateCardComponent = (props) => {
     )
 }
 
-export default PirateCardComponent
+export default PirateCardComponent;

@@ -1,11 +1,7 @@
-// ---------------------------------------------------
-// CONFIG SETUP - Authentication
-// ---------------------------------------------------
 
-// 1) Importing External Libraries
 const jwt = require("jsonwebtoken");
 
-// 2) Exporting a function for checking authentication
+//  Exporting a function for checking authentication
 module.exports = {
   authenticate: (req, res, next) => {
     jwt.verify(

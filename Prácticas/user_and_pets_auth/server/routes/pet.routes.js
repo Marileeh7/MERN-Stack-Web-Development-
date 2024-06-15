@@ -1,14 +1,11 @@
-// ---------------------------------------------------
-// ROUTES SETUP - Pet
-// ---------------------------------------------------
 
-// 1) Importing External Libraries
+//  Importing External Libraries
 const express = require("express");
 
-// 2) Importing authenticate function for restricting requests
+//  Importing authenticate function for restricting requests
 const { authenticate } = require("../config/jwt.config");
 
-// 3) Importing Controller
+//  Importing Controller
 const {
   findAllPets,
   findOnePetById,
@@ -19,10 +16,10 @@ const {
 } = require("../controllers/pet.controller");
 
 
-// 4) Create Router Instance
+//  Create Router Instance
 const PetRouter = express.Router();
 
-// 5) Link Routes with Controller Methods
+//  Link Routes with Controller Methods
 PetRouter.get("/", authenticate, findAllPets);
 PetRouter.get("/:id/", authenticate, findOnePetById);
 PetRouter.post("/", authenticate, createNewPet);
@@ -30,5 +27,5 @@ PetRouter.put("/:id/", authenticate, updateOnePetById);
 PetRouter.delete("/", authenticate, deleteAllPets);
 PetRouter.delete("/:id/", authenticate, deleteOnePetById);
 
-// 6) Exporting Router
+//  Exporting Router
 module.exports = PetRouter;

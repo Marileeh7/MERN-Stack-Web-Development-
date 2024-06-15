@@ -1,13 +1,9 @@
-// ---------------------------------------------------
-// MODEL SETUP - User
-// ---------------------------------------------------
 
-// 1) Importing External Libraries
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const uniqueValidator = require("mongoose-unique-validator");
 
-// 2) Creating Schema for Model (blueprint)
+//  Creating Schema for Model (blueprint)
 const UserSchema = new mongoose.Schema(
   {
     name: {
@@ -33,14 +29,14 @@ const UserSchema = new mongoose.Schema(
   }
 );
 
-// 3) Create virtual fields
+//  Create virtual fields
 
-// 3.1) Create a "virtual space" to hold confirmPassword value
+//  Create a "virtual space" to hold confirmPassword value
 UserSchema.virtual("confirmPassword")
   .get(function() { return this._confirmPassword }) // define getter for virtual property "confirmPassword"
   .set(function(value) { this._confirmPassword = value }); // define setter for virtual property "confirmPassword"
 
-// 3.2) Compare passwords but NOT save confirmPassword to the database
+//  Compare passwords but NOT save confirmPassword to the database
 UserSchema.pre("validate", function (next) { // "pre" -> before validating
   if (this.confirmPassword !== this.password) {
     this.invalidate("confirmPassword", "Error: passwords didn't match. Please try again.");
@@ -49,7 +45,7 @@ UserSchema.pre("validate", function (next) { // "pre" -> before validating
   next();
 })
 
-// 3.3) Hash password before saving to database -> no one can access to the user's real password
+//  Hash password before saving to database -> no one can access to the user's real password
 UserSchema.pre("save", function (next) {  // "pre" -> before saving to database
   bcrypt.hash(this.password, 10)
     .then((hashedPassword) => {
@@ -62,11 +58,11 @@ UserSchema.pre("save", function (next) {  // "pre" -> before saving to database
     });
 })
 
-// 4) Apply the uniqueValidator plugin to userSchema.
+//  Apply the uniqueValidator plugin to userSchema.
 UserSchema.plugin(uniqueValidator,  { message: 'Error: User already registered.' });
 
-// 5) Creating Model using Schema
+// Creating Model using Schema
 const UserModel = mongoose.model("User", UserSchema);
 
-// 6) Exporting Model
+//  Exporting Model
 module.exports = UserModel;

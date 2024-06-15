@@ -8,9 +8,7 @@ import CreatePage from "./views/CreatePage";
 import UpdatePage from "./views/UpdatePage";
 import NavBar from "./components/NavBar";
 
-// **************************************************************************
-// A) AUXILIARY COMPONENT
-// **************************************************************************
+
 const ProtectedRoute = (props) => {
   // Variables from Props
   const { user, redirectPath = "/login", children } = props;
@@ -20,27 +18,18 @@ const ProtectedRoute = (props) => {
 };
 
 const PublicRoute = (props) => {
-  // --------------------------------------------------
-  // I) HOOKS AND VARIABLES
-  // --------------------------------------------------
+ 
 
   // Variables
   const { user, redirectPath = "/", children } = props;
 
-  // --------------------------------------------------
-  // II) JSX
-  // --------------------------------------------------
+  
   return <>{user ? <Navigate to={redirectPath} replace /> : children}</>;
 };
 
-// **************************************************************************
-// B) MAIN COMPONENT
-// **************************************************************************
 
 const App = () => {
-  // --------------------------------------------------
-  // I) HOOKS AND VARIABLES
-  // --------------------------------------------------
+  
 
   // Variables
   const userDetails = JSON.parse(localStorage.getItem("user"));
@@ -48,9 +37,6 @@ const App = () => {
   // State Hooks
   const [user, setUser] = useState(userInfo);
 
-  // --------------------------------------------------
-  // II) JSX
-  // --------------------------------------------------
   return (
     <div className="App">
       <NavBar setUser={setUser} />

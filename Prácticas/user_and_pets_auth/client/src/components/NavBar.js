@@ -6,9 +6,6 @@ import axios from "axios";
 import _ from "lodash";
 
 const NavBar = (props) => {
-  // --------------------------------------------------
-  // I) HOOKS AND VARIABLES
-  // --------------------------------------------------
 
   // Destructuring Props
   const { setUser } = props;
@@ -25,16 +22,13 @@ const NavBar = (props) => {
   else if (location.pathname === "/login") currentView = "logRegPage";
   else currentView = "detailsPage";
 
-  // --------------------------------------------------
-  // II) HANDLERS AND AUXILIAR FUNCTIONS
-  // --------------------------------------------------
 
-  // i) Handlers
+  // Handlers
   const handleLogout = () => {
     logoutUser();
   };
 
-  // ii) API Calls
+  // API Calls
   const logoutUser = async () => {
     try {
       await axios.get("http://localhost:8000/api/users/logout",
@@ -49,9 +43,6 @@ const NavBar = (props) => {
     }
   }
 
-  // --------------------------------------------------
-  // III) JSX
-  // --------------------------------------------------
   return (
     <nav className="navbar navbar-dark bg-secondary">
       <div className="container">

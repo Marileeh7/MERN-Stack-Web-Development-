@@ -1,11 +1,7 @@
-// ---------------------------------------------------
-// MODEL SETUP - User
-// ---------------------------------------------------
 
-// 1) Importing External Libraries
 const mongoose = require("mongoose");
 
-// 2) Creating Schema for Model (blueprint)
+//  Creating Schema for Model (blueprint)
 const PetSchema = new mongoose.Schema({
 	name: {
     type: String,
@@ -26,8 +22,8 @@ const PetSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// 3) Creating Model using Schema
+//  Creating Model using Schema
 const UserModel = mongoose.model("Pet", PetSchema);
 
-// 4) Exporting Model
+//  Exporting Model
 module.exports = UserModel;

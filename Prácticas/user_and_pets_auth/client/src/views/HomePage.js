@@ -5,22 +5,11 @@ import PetTable from '../components/PetTable'
 
 const HomePage = (props) => {
 
-  // ---------------------------------------------
-  // I) VARIABLES & HOOKS
-  // ---------------------------------------------
   // Destrcuturing Props
   const { user } = props;
   // State Hooks
   const [usersList, setUsersList] = useState();
 
-
-  // ---------------------------------------------
-  // II) HANDLERS & AUX FUNCTIONS
-  // ---------------------------------------------
-
-  // ---------------------------------------------
-  // III) JSX
-  // ---------------------------------------------
   return (
     <div>
       <h3 className="mb-3">Welcome {user.name}!!!</h3>
@@ -35,4 +24,4 @@ const HomePage = (props) => {
   )
 }
 
-export default HomePage
+export default HomePage;

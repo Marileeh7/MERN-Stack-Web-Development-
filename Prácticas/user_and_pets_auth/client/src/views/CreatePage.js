@@ -4,19 +4,9 @@ import PetForm from '../components/PetForm'
 
 const CreatePage = (props) => {
 
-  // ---------------------------------------------
-  // I) VARIABLES & HOOKS
-  // ---------------------------------------------
-  // Destrcuturing Props
   const { user } = props;
 
-  // ---------------------------------------------
-  // II) HANDLERS & AUX FUNCTIONS
-  // ---------------------------------------------
-
-  // ---------------------------------------------
-  // III) JSX
-  // ---------------------------------------------
+ 
   return (
     <div>
 
@@ -30,4 +20,4 @@ const CreatePage = (props) => {
   )
 }
 
-export default CreatePage
+export default CreatePage;

@@ -4,10 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
 const DetailsPage = () => {
-  // ---------------------------------------------
-  // I) VARIABLES & HOOKS
-  // ---------------------------------------------
-
+  
   // State Hooks
   const [pet, setPet] = useState();
 
@@ -19,9 +16,7 @@ const DetailsPage = () => {
     getOnePetById();
   }, []);
 
-  // ---------------------------------------------
-  // II) HANDLERS & AUX FUNCTIONS
-  // ---------------------------------------------
+ 
 
   const getOnePetById = async () => {
     try {
@@ -34,9 +29,6 @@ const DetailsPage = () => {
     }
   };
 
-  // ---------------------------------------------
-  // III) JSX
-  // ---------------------------------------------
   return (
     <div>
       <h1 className="text-decoration-underline mb-3">Super Pets Website</h1>

@@ -3,16 +3,9 @@ import UserForm from '../components/UserForm'
 
 const LogRegPage = (props) => {
 
-  // --------------------------------------------------
-  // I) HOOKS AND VARIABLES
-  // --------------------------------------------------
-
-  // i) Lifting States
+  //  Lifting States
   const { setUser } = props
 
-  // --------------------------------------------------
-  // II) JSX
-  // --------------------------------------------------
   return (
     <div className="container mt-5">
       <hr/>
@@ -29,4 +22,4 @@ const LogRegPage = (props) => {
   )
 }
 
-export default LogRegPage
+export default LogRegPage;

@@ -1,17 +1,14 @@
-// ---------------------------------------------------
-// CONTROLLER SETUP - Pet
-// ---------------------------------------------------
 
-// 1) Importing External Libraries
+//  Importing External Libraries
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Types; // Destructuring assignment to get ObjectId
 
-// 2) Importing Model
+//  Importing Model
 const PetModel = require("../models/pet.model");
 
-// 3) Exporting Controller functions
+//  Exporting Controller functions
 module.exports = {
-  // 2.1) READ METHODS
+  //  READ METHODS
   findAllPets: (req, res) => {
     PetModel.find({})
       .populate("owner")
@@ -38,7 +35,7 @@ module.exports = {
         res.status(500).json({ message: "Something went wrong", error: err })
       );
   },
-  // 2.2) CREATE METHODS
+  //  CREATE METHODS
   createNewPet: (req, res) => {
     PetModel.create(req.body)
       .then((newPet) => PetModel.findOne({ _id: newPet._id }).populate("owner"))
@@ -52,7 +49,7 @@ module.exports = {
         res.status(500).json({ message: "Something went wrong", errors: err });
       });
   },
-  // 2.3) UPDATE METHODS
+  //  UPDATE METHODS
   updateOnePetById: (req, res) => {
     if (!ObjectId.isValid(req.params.id))
       return res
@@ -81,7 +78,7 @@ module.exports = {
         res.status(500).json({ message: "Something went wrong", errors: err });
       });
   },
-  // 2.4) DELETE METHODS
+  // DELETE METHODS
   deleteAllPets: (req, res) => {
     PetModel.deleteMany({})
       .then((result) => res.status(200).json({ message: "All pets deleted", result: result }))

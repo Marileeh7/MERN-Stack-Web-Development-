@@ -6,10 +6,7 @@ import _ from "lodash";
 import DeleteButton from "./DeleteButton";
 
 const PetForm = (props) => {
-  // --------------------------------------------------
-  // I) HOOKS AND VARIABLES
-  // --------------------------------------------------
-
+ 
   // Variables
   const { formType, user } = props;
 
@@ -33,11 +30,8 @@ const PetForm = (props) => {
     }
   }, []);
 
-  // --------------------------------------------------
-  // II) HANDLERS AND AUXILIAR FUNCTIONS
-  // --------------------------------------------------
 
-  // i) Handlers
+
 
   const onChangePetDetailsHandler = (e) => {
     let petToUpdate = { ...pet };
@@ -59,7 +53,7 @@ const PetForm = (props) => {
     }
   };
 
-  // ii) API Calls
+  //  API Calls
 
   const getOnePetById = async () => {
     try {
@@ -85,7 +79,7 @@ const PetForm = (props) => {
       navigate("/");
     } catch (err) {
       console.log(err);
-      // extract error messages from err.response.data
+      
       updateErrorMessages(err);
     }
   };
@@ -100,12 +94,12 @@ const PetForm = (props) => {
       navigate("/");
     } catch (err) {
       console.log(err);
-      // extract error messages from err.response.data
+    
       updateErrorMessages(err);
     }
   };
 
-  // iii) Aux Functions
+  //  Aux Functions
   const updateErrorMessages = (err) => {
     let errors = err.response.data.errors?.errors;
     let errorMessagesToUpdate = _.mapValues(errors, (error) => error.message);
@@ -115,9 +109,7 @@ const PetForm = (props) => {
     setErrorMessages(errorMessagesToUpdate);
   };
 
-  // --------------------------------------------------
-  // III) JSX
-  // --------------------------------------------------
+
   return (
     <div className="mt-3 w-50 bg-light p-3 border border-1">
       <form onSubmit={onSubmitPetDetailsHandler}>
@@ -139,7 +131,7 @@ const PetForm = (props) => {
           </div>
         </div>
 
-        {/* Type Field */}
+       
         <div className="row mb-3">
           <label htmlFor="type" className="col-2 col-form-label text-left">
             Type:
