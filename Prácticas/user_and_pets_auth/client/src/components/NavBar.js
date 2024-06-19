@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { MdOutlinePets } from "react-icons/md"; // Import the icon from react-icons
+
 
 import axios from "axios";
 import _ from "lodash";
