@@ -47,7 +47,7 @@ const NavBar = (props) => {
     <nav className="navbar navbar-dark bg-secondary">
       <div className="container">
         <Link to="/" className="navbar-brand d-flex align-items-center">
-          <MdOutlinePets size={50} className="p-1" />
+          
           <h3 className="mx-3 my-0">Super Pets Website</h3>
         </Link>
         <div className="d-flex ms-auto">
