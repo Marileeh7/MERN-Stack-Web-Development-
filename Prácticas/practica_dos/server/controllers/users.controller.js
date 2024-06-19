@@ -22,7 +22,7 @@ module.exports = {
             data = { ...data, password: hash };
             UserModel.create(data)
                 .then(() => {
-                    res.json({ success: true });
+                    res.json({ success: true, message: "Usuario registrado exitosamente" }); // Agrega el mensaje aquí
                 })
                 .catch((error) => {
                     if (error instanceof mongoose.Error.ValidationError) {

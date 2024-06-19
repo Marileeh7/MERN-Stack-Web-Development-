@@ -1,28 +1,27 @@
-import { Button, Col, Row } from "react-bootstrap";
 import style from "./PirateValue.module.css";
+import "../../App.css"; // Asegúrate de importar los estilos globales
 
 const PirateValueComponent = (props) => {
     return (
-        <Row>
-            <Col className="mt-3">
-                <label className="fw-bold text-uppercase" >{props.keyLabel}:</label>                
-            </Col>
-            <Col className="mt-3">
-                <span className="">{props.valueLabel}</span>
-            </Col>
-            <Col className="mt-3">
-            {
+        <div className="row">
+            <div className="col mt-3">
+                <label className="fw-bold text-uppercase">{props.keyLabel}:</label>                
+            </div>
+            <div className="col mt-3">
+                <span>{props.valueLabel}</span>
+            </div>
+            <div className="col mt-3">
+                {
                     props.hasButton ?
-                    
-                    <Button 
-                        className={`w-50 ${props.value ? "btn-danger" : "btn-success"}`}
+                    <button 
+                        className={`btn w-50 ${props.value ? "btn-danger" : "btn-success"}`}
                         onClick={props.buttonAction}
                     >
                         {props.buttonText}
-                    </Button> : null
+                    </button> : null
                 }
-            </Col>
-        </Row>
+            </div>
+        </div>
     )
 }
 

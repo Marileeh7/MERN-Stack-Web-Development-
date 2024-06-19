@@ -1,3 +1,5 @@
+/* app.css */
+
 /* Estilo general del cuerpo */
 body {
     background-color: #f0f0f0; /* Gris claro */
@@ -32,6 +34,30 @@ button:hover, .btn:hover {
 button:active, .btn:active {
     background-color: #004494; /* Azul más oscuro en active */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reducida sombra en active */
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
 
 /* Estilo para todos los inputs */
@@ -75,6 +101,12 @@ input:focus, select:focus, textarea:focus {
 
 /* Estilos para imágenes */
 img.keep-aspect {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.pirateImage {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
@@ -125,6 +157,19 @@ img.keep-aspect {
 
 .border-3 {
     border-width: 3px !important;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+
+.mx-5 {
+    margin-left: 3rem !important;
+    margin-right: 3rem !important;
+}
+
+.text-center {
+    text-align: center !important;
 }
 
 /* Estilos personalizados */
@@ -182,3 +227,197 @@ img.keep-aspect {
 .content {
     min-height: calc(100vh - 150px);
 }
+
+.pirates-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col, .col-md-6, .col-xs-3, .col-xs-9 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-xs-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-xs-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.text-lg {
+    font-size: 1.25rem;
+}
+
+.mw-75 {
+    max-width: 75%;
+}
+
+.mh-400 {
+    max-height: 400px;
+}
+
+.keep-aspect {
+    object-fit: cover;
+}
+
+/* Estilos para formularios */
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select {
+    width: 100%;
+    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.form-check-input {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.25rem;
+    vertical-align: middle;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 0.25rem;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+}
+
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.form-text {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+.text-success {
+    color: #28a745 !important;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.fs-5 {
+    font-size: 1.25rem !important;
+}
+
+/* Estilos para el contenedor principal */
+.main-container {
+    background-color: #ff8c00; /* Naranja */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Estilos para el encabezado */
+.header-container {
+    text-align: center;
+    background-color: #333333; /* Gris oscuro */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.header-container h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Estilos para los formularios */
+.form-container {
+    background-color: #ffffff; /* Blanco */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Estilos para botones personalizados */
+.register-button {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.login-button {
+    background-color: #28a745; /* Verde */
+    border-color: #28a745;
+}
+
+.login-button:hover {
+    background-color: #218838; /* Verde oscuro */
+    border-color: #1e7e34;
+}
+
+/* Estilos adicionales específicos */
+.custom-margin {
+    margin: 20px 0;
+}
+

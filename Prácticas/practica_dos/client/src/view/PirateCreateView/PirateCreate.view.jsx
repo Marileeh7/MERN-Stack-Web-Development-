@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Button, Col, Row } from "react-bootstrap";
 import PiratesTemplate from "../../Template/Pirates.template";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { baseURL } from "../../config";
+import "../../App.css"; // Asegúrate de importar los estilos globales
 
 const PirateCreateView = (props) => {
     const [data, setData] = useState({
@@ -57,8 +57,8 @@ const PirateCreateView = (props) => {
             buttonAction={goToCrew}
         >
             <form onSubmit={createPirate}>
-                <Row className="d-flex align-items-stretch my-3">
-                    <Col md={6}>
+                <div className="row align-items-stretch my-3">
+                    <div className="col-md-6">
                         <div className="mt-3 px-2">
                             <label className="form-label">Pirate Name:</label>
                             <input 
@@ -109,8 +109,8 @@ const PirateCreateView = (props) => {
                             />
                             <div className="form-text text-danger fw-bold">{errors.quote}</div>
                         </div>
-                    </Col>
-                    <Col md={6}>
+                    </div>
+                    <div className="col-md-6">
                         <div className="mt-3 px-2">
                             <label className="form-label">Crew Position:</label>
                             <select 
@@ -160,11 +160,11 @@ const PirateCreateView = (props) => {
                                 <div className="form-text text-danger fw-bold">{errors.hook_hand}</div>
                             </div>
                             <div className="mt-3 px-2">
-                                <Button type="submit" className="submit-button">Add Pirate</Button>
+                                <button type="submit" className="btn btn-secondary">Add Pirate</button>
                             </div>
                         </div>
-                    </Col>
-                </Row>
+                    </div>
+                </div>
             </form>
         </PiratesTemplate>
     );

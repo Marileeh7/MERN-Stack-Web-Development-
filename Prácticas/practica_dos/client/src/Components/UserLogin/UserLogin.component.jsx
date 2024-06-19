@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { baseURL } from "../../config";
+import "../../App.css"; // Asegúrate de importar los estilos globales
 
 const UserLogin = (props) => {
     const [data, setData] = useState({ email: "", password: "" });
@@ -53,7 +53,7 @@ const UserLogin = (props) => {
                 <div className="form-text text-danger fw-bold">{errors?.password}</div>
             </div>
             <div className="mt-3">
-                <Button type="submit" className="submit-button">Login</Button>
+                <button type="submit" className="btn btn-primary submit-button">Login</button>
             </div>
         </form>
     );

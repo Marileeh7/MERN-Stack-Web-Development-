@@ -1,5 +1,4 @@
 import { Button, Col, Row } from "react-bootstrap";
-import style from "./PirateValue.module.css";
 
 const PirateValueComponent = (props) => {
     return (

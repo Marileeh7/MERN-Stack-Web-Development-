@@ -30,16 +30,6 @@ const PirateSchema = new mongoose.Schema({
     timestamps: true
 });
 
-// PirateSchema.path("position").validate(async (value) => {
-//     console.log(this, Object.keys(this));
-//     if (Object.keys(this).length !== 0) {
-//         console.log(await PirateModel.exists({position: "Captain", _id: {$neq: this.get("_id")}}))
-//     } else {
-//         console.log(await PirateModel.exists({position: "Captain"}))
-//     }
-//     return false
-// })
-
 const PirateModel = mongoose.model("Pirates", PirateSchema);
 
 module.exports = PirateModel;

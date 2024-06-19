@@ -1,11 +1,10 @@
-import { Col, Row, Button } from "react-bootstrap";
 import PiratesTemplate from "../../Template/Pirates.template";
 import PirateValueComponent from "../../Components/PirateValue/PirateValue.component";
-import style from "./PirateDetail.module.css";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { baseURL } from "../../config";
+import "../../App.css"; // Asegúrate de importar los estilos globales
 
 const PirateDetailView = (props) => {
     const [pirate, setPirate] = useState(null);
@@ -47,16 +46,16 @@ const PirateDetailView = (props) => {
 
     return (
         <PiratesTemplate title={pirate.name ?? "No hay pirata"} hasButton={false}>
-            <Row className="d-flex align-items-stretch my-3">
-                <Col md={6}>
-                    <Row className="d-flex justify-content-center">
-                        <img className={`${style["mw-75"]} ${style["mh-400"]} ${style["keep-aspect"]}`} src={pirate.photo} alt="Pirate picture" />
-                    </Row>
-                    <Row className="d-flex justify-content-center">
+            <div className="row align-items-stretch my-3">
+                <div className="col-md-6">
+                    <div className="row justify-content-center">
+                        <img className="mw-75 mh-400 keep-aspect" src={pirate.photo} alt="Pirate picture" />
+                    </div>
+                    <div className="row justify-content-center">
                         <h3 className="text-center text-lg">{pirate.quote}</h3>
-                    </Row>
-                </Col>
-                <Col md={6} className="bg-white p-5 rounded border border-dark border-3">
+                    </div>
+                </div>
+                <div className="col-md-6 bg-white p-5 rounded border border-dark border-3">
                     <PirateValueComponent
                         keyLabel={"position"}
                         valueLabel={pirate.position}
@@ -98,12 +97,12 @@ const PirateDetailView = (props) => {
                         }}
                     />
                     <div className="mt-3">
-                        <Button variant="secondary" onClick={goToCrew}>
+                        <button className="btn btn-secondary" onClick={goToCrew}>
                             Back to Pirate List
-                        </Button>
+                        </button>
                     </div>
-                </Col>
-            </Row>
+                </div>
+            </div>
         </PiratesTemplate>
     );
 };

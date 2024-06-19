@@ -1,12 +1,11 @@
-import {Container, Row, Col} from "react-bootstrap";
 import styles from './Pirates.module.css';
+import "../App.css"; // Asegúrate de importar los estilos globales
 
 const PiratesTemplate = (props) => {
-
     return (
-        <Container className={styles.bgOrange}>
-            <Row className={`d-flex ${styles.header}`}>
-                <Col className={styles.absolutePosition}>
+        <div className={`container ${styles.bgOrange}`}>
+            <div className={`row d-flex ${styles.header}`}>
+                <div className={`col ${styles.absolutePosition}`}>
                     <h1 className={styles.centerTitle}>{props.title}</h1>
                     {props.hasButton ? 
                         <button className={styles.endButton} onClick={props.buttonAction}>
@@ -14,12 +13,12 @@ const PiratesTemplate = (props) => {
                         </button> :
                         null
                     }
-                </Col>
-            </Row>
-            <Row className={`d-flex justify-content-center ${styles.content}`} >
+                </div>
+            </div>
+            <div className={`row d-flex justify-content-center ${styles.content}`}>
                 {props.children}
-            </Row>
-        </Container>
+            </div>
+        </div>
     )
 }
 

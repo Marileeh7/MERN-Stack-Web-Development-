@@ -1,6 +1,6 @@
 /* Estilo general del cuerpo */
 body {
-    background-color: #f0f0f0; /* Gris claro */
+    background-color: #FE9900; /* Gris claro */
     color: #000000; /* Negro */
     font-family: Arial, sans-serif;
     margin: 0;
@@ -130,12 +130,12 @@ img.keep-aspect {
 /* Estilos personalizados */
 .header {
     height: 140px;
-    background-color: #d5d5d5; /* Gris claro */
+    background-color: #773F04; /* Gris claro */
     border-radius: 8px; /* Incrementado el radio de borde */
 }
 
 .bgOrange {
-    background-color: #f1f3f4; /* Gris claro */
+    background-color: #FE9900; /* Gris claro */
     width: 95% !important;
     min-width: 95% !important;
     border-radius: 8px; /* Incrementado el radio de borde */
@@ -152,7 +152,7 @@ img.keep-aspect {
     top: 20px;
     left: calc(50% - 200px);
     text-align: center;
-    color: rgb(15, 14, 14);
+    color: rgb(255, 255, 255);
 }
 .endButton {
     position: absolute;

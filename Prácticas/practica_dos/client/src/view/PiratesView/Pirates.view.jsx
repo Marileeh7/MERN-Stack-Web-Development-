@@ -1,13 +1,12 @@
 import PiratesTemplate from "../../Template/Pirates.template";
 import PirateCardComponent from "../../Components/PirateCard/PirateCard.component";
-import { Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { baseURL } from "../../config";
 import { useEffect, useState } from "react";
+import "../../App.css"; // Asegúrate de que app.css esté importado en el archivo principal
 
 const PiratesView = (props) => {
-
     const [pirates, setPirates] = useState([]);
     const navigate = useNavigate();
 
@@ -29,11 +28,11 @@ const PiratesView = (props) => {
             })
     }
 
-    const deletePirate =(id) => {
+    const deletePirate = (id) => {
         axios.delete(`${baseURL}/pirates/${id}`, {withCredentials: true})
             .then((response) => {
                 setPirates(
-                    pirates.filter((pirate) => pirate._id != id)
+                    pirates.filter((pirate) => pirate._id !== id)
                 )
             })
             .catch((error)=> {
@@ -48,10 +47,9 @@ const PiratesView = (props) => {
             title="Pirate Crew"
             hasButton={true}
             buttonText="Create Pirate"
-            buttonAction={() => { navigate("/pirate/new/")}
-        }
+            buttonAction={() => { navigate("/pirate/new/")}}
         >
-            <Col xs={8}>
+            <div className="pirates-container">
                 {pirates.map(((pirate) => {
                     return <PirateCardComponent
                         image={pirate.photo}
@@ -59,13 +57,10 @@ const PiratesView = (props) => {
                         id={pirate._id}
                         key={pirate._id}
                         deletePirate={deletePirate}
-                    />})
-                    )
-                }
-            </Col>
+                    />
+                }))}
+            </div>
         </PiratesTemplate>
-
-        
     )
 }
 
