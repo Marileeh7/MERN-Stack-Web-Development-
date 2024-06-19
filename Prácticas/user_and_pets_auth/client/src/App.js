@@ -10,10 +10,10 @@ import NavBar from "./components/NavBar";
 
 
 const ProtectedRoute = (props) => {
-  // Variables from Props
+  
   const { user, redirectPath = "/login", children } = props;
 
-  // II) JSX
+
   return <>{!user ? <Navigate to={redirectPath} replace /> : children}</>;
 };
 
@@ -34,6 +34,7 @@ const App = () => {
   // Variables
   const userDetails = JSON.parse(localStorage.getItem("user"));
   const userInfo = userDetails ? userDetails : null;
+  
   // State Hooks
   const [user, setUser] = useState(userInfo);
 

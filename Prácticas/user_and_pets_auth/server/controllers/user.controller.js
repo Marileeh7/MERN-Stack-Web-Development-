@@ -32,7 +32,7 @@ module.exports = {
       });
   },
 
-  // II) LOGIN
+  // LOGIN
   login: (req, res) => {
     // find the user that matches the email entered by the user
     UserModel.findOne({ email: req.body.email })

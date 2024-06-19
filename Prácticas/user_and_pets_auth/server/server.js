@@ -1,5 +1,5 @@
 
-// 0) load up all of our keys and values from the .env file into memory
+//  load up all of our keys and values from the .env file into memory
 // (we can access this through an object called "process.env")
 require("dotenv").config();
 
