@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Registro</title>
+  </head>
+  <body>
+    <header>
+      <h1>Formulario de Registro</h1>
+    </header>
+    <nav>
+        <form>
+            <div>
+                 <label for="nombres">Nombres: *</label>
+                    <input
+                        type="text"
+                        id="nombres"
+                        name="nombres"
+                        required
+                        placeholder="Maria Leticia..."/><br />
+            </div>
+            <div>
+        <label for="apellido">Apellido: *</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          required
+          placeholder="López..."/>
+        <br/>
+      </div>
+      <div>
+        <label for="email">E-mail: *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="ejemplo@correo.com"
+        />
+        <br />
+      </div>
+      <div>
+        <label for="password">Password: *</label>
+        <input type="password" id="password" name="password" required placeholder="Mínimo 8 caracteres"
+        />
+        <br />
+      </div>
+      <div>
+        <label for="confirm-password">Confirmación de Password: *</label>
+        <input type="password" id="confirm-password" name="confirm-password" required placeholder="Repite tu password"/><br/>
+      </div>
+      <div>
+        <label for="nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="nacimiento"name="nacimiento" placeholder="dd-mm-aaaa"
+        />
+        <br />
+      </div>
+      <div>
+        <label>Género:</label><br />
+        <input type="radio" id="Hombre" name="genero" value="Hombre" />
+        <label for="Hombre">Hombre</label>
+        <input type="radio" id="Mujer" name="genero" value="Mujer" />
+        <label for="Mujer">Mujer</label>
+        <input type="radio" id="no-binario" name="genero" value="no-binario" />
+        <label for="no-binario">No Binario</label>
+        <input type="radio" id="no-responde"name="genero" value="no-responde"
+        />
+        <label for="no-responde">Prefiero no Responder</label>
+      </div>
+      <div>
+        <label for="lenguaje-favorito"
+          >Lenguaje de Programación favorito:</label
+        >
+        <select id="lenguaje-favorito" name="lenguaje-favorito">
+          <option value="javascript">JavaScript</option>
+          <option value="java">Java</option>
+          <option value="python">Python</option>
+          <option value="csharp">C#</option>
+          <option value="ruby">Ruby</option>
+          <option value="cpp">C++</option>
+        </select>
+        <br />
+      </div>
+      <div>
+        <label for="descripcion">Una breve descripción sobre mí:</label><br/>
+        <textarea  id="descripcion"name="descripcion"placeholder="Describe tus hobbies, intereses..."></textarea><br />
+      </div>
+      <div>
+        <input type="checkbox" id="updates" name="updates" /> 
+        <label for="updates"
+          >Sí, quiero recibir e-mails de actualizaciones</label><br/>
+      </div>
+      <div>
+        <input type="submit" value="Crear cuenta" />
+      </div>
+    </form>
+    * Campos obligatorios
+  </body>
+</html>
