@@ -1,0 +1,50 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+    <title>Dojonary</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Dojonary</h1>
+        <input type="text" placeholder="Search">
+        <button class="btn primary" onclick="BtnLogin(this)">Login</button>
+    </nav>
+    <main class="row">
+        <section class="col-2">
+            <div class="card">
+                <div class="col-1 center-H">
+                    <h2>ninja</h2>
+                    <p>noun</p>
+                    <p>Plural: <em>ninjas</em></p>
+                    <button class="btn tertiary" onclick="alert('Ninja was liked')">13 likes</button>
+                </div>
+                <div class="col-2 center-V">
+                    <p>A practitioner skilled in the <a href="#">Japanese</a> art of <a href="#">ninjutsu</a></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="col-1 center-H">
+                    <h2>ninja</h2>
+                    <p>noun</p>
+                    <p>Plural: <em>ninjas</em></p>
+                    <button class="btn tertiary" onclick="alert('Ninja was liked')">37 likes</button>
+                </div>
+                <div class="col-2 center-V">
+                    <p>A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus</p>
+                </div>
+            </div>
+        </section>
+        <section class="col-1">
+            <div class="card">
+                <div class="col-1">
+                    <p class="h1">Dojonary is defined by <b>YOU</b></p>
+                    <button class="btn secundary" onclick="remove(this)">Add Definition</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
