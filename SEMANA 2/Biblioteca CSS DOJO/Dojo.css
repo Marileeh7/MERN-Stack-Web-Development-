@@ -1,0 +1,146 @@
+
+/* Botones favoritos*/
+.busqueda{
+    padding: 6px 50px;
+    margin: 15px;
+    color: rgb(45, 189, 196);
+    background-color: rgb(240, 241, 241);
+    border:rgb(45, 189, 196);
+    border-style:solid;
+    border-radius: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+
+
+}
+.agregar{
+        display:block;
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        border: 1px solid rgb(33, 159, 159);
+        background-color: rgb(33, 159, 159);
+        color: white;
+        margin: 15px;
+      }
+
+.btn{
+        width: 150px;
+        background-color: #2b78e4;
+        color: #fff;
+        border: 2px solid #000;
+        box-shadow: 3px 3px black;
+        margin: 15px;
+        padding: 6px;
+      }
+
+      /* ROW Y COLUMNA DE Columna flex-ibles*/
+      .row{
+        margin: 20px;
+        display: flex;
+    }
+    .col{
+        flex: 1;
+        padding: 15px;
+        border: solid;
+        background-color: aqua;
+    }
+    .col-2{
+        flex: 2;
+        padding: 15px;
+        border: solid;
+        background-color: aqua;
+    }
+    .col-3{
+        flex: 3;
+        padding: 15px;
+        border: solid;
+        background-color: aqua;
+    }
+
+/* barra de navegacion con felex */
+.nav{
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+.nav-title{
+            color: white;
+            margin-left: 25px;
+        }
+.nav-links{
+            display: flex;
+            align-items: center;
+            font-size: large;
+}
+
+/*Imagen de perfil*/
+.perfil img{
+    position: absolute;
+    top: 100px;
+    width: 100px;
+    height: 100px;
+    padding: 2px;
+    margin-left: 30px;
+    background-color: white;
+    border: solid;
+    border-color: rgb(204,204,204);
+    border-radius: 100%;
+}
+ /* de pagina de perfil*/
+.navbar{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: large;
+}
+.nav-links li{
+    margin: 0px 8px;
+    list-style-type: none;
+    font-size: medium;
+}
+.nav-links a{
+    color: rgb(171, 171, 171);
+    text-decoration: none;
+}
+.nav-links a:hover {
+    color: white;
+}
+
+.btn2{
+    height: 30px;
+    padding: 0px 10px;
+    border-radius: 2px;
+    background-color: rgb(23,162,184);
+    border-color: black;
+    border-style: solid;
+    font-size: large;
+    color: white;
+}
+.icon{
+    width:  30px;
+    height: 30px;
+    border-radius: 100%;
+    margin: 5px;
+}
+.count-circle{
+    width: auto;
+    height: 30px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(204,204,204);
+    text-align: center;
+    color: black;
+    border-radius: 100%;
+    padding: 0px 10px;
+}

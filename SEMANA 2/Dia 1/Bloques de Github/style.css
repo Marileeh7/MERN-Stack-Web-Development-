@@ -1,0 +1,56 @@
+.container{
+background-color: rgb(215, 215, 246);
+border-top: 25px;
+border-top-style:solid;
+border-top-color: black;
+padding: 35px;
+margin: 10px;
+}
+h1{
+    padding: 0 0 0 25px;
+    border-color: black;
+    margin: 10px;
+    align-content: center;
+    font-family: cursive;
+    font-size: 45px;
+    display: flex;
+   justify-content: center;
+    font-style: bold;
+}
+.fondo{
+    /* display: flex; */
+    padding: 15px;
+    margin: 15px;
+    width: auto;
+   justify-content: center;
+}
+.fila_de_cajas{
+   margin: 15px;
+   padding: auto;
+   display: flex;
+}
+.sub-content{
+   margin:25px;
+   padding: 15px;
+}
+img{
+    max-width: 360px;
+}
+#fila1{
+    background-color: beige;
+    justify-content: space-around;
+}
+#fila2{
+    background-color: rgb(205, 248, 163);
+    justify-content:space-evenly ;
+}
+#fila3{
+    background-color: rgb(249, 201, 184);
+    justify-content: space-between;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    font-family: tahoma;
+    font-size: small;
+}
